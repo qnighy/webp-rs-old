@@ -20,6 +20,17 @@ fn main() {
     dir(&mut build, "src/dec");
     dir(&mut build, "src/enc");
     dir(&mut build, "src/dsp");
-    dir(&mut build, "src/utils");
+    build.file("libwebp-1.0.0/src/utils/bit_reader_utils.c");
+    build.file("libwebp-1.0.0/src/utils/bit_writer_utils.c");
+    build.file("libwebp-1.0.0/src/utils/color_cache_utils.c");
+    build.file("libwebp-1.0.0/src/utils/filters_utils.c");
+    build.file("libwebp-1.0.0/src/utils/huffman_encode_utils.c");
+    build.file("libwebp-1.0.0/src/utils/huffman_utils.c");
+    build.file("libwebp-1.0.0/src/utils/quant_levels_dec_utils.c");
+    build.file("libwebp-1.0.0/src/utils/quant_levels_utils.c");
+    // build.file("libwebp-1.0.0/src/utils/random_utils.c");
+    build.file("libwebp-1.0.0/src/utils/rescaler_utils.c");
+    build.file("libwebp-1.0.0/src/utils/thread_utils.c");
+    build.file("libwebp-1.0.0/src/utils/utils.c");
     build.compile("webp");
 }
