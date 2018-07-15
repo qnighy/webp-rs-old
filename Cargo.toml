@@ -11,4 +11,4 @@ build = "build.rs"
 approx = "0.2.0"
 
 [build-dependencies]
-cc = "1.0"
+cc = "1.0.0"
