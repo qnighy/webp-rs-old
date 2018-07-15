@@ -6,6 +6,7 @@ authors = ["Masaki Hara <ackie.h.gmai@gmail.com>"]
 build = "build.rs"
 
 [dependencies]
+cfg-if = "0.1.0"
 
 [dev-dependencies]
 approx = "0.2.0"

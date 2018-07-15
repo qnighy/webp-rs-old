@@ -17,7 +17,16 @@ fn dir(build: &mut cc::Build, dir: &str) {
 fn main() {
     let mut build = cc::Build::new();
     build.include("libwebp-1.0.0");
-    dir(&mut build, "src/dec");
+    build.file("libwebp-1.0.0/src/dec/alpha_dec.c");
+    build.file("libwebp-1.0.0/src/dec/buffer_dec.c");
+    build.file("libwebp-1.0.0/src/dec/frame_dec.c");
+    build.file("libwebp-1.0.0/src/dec/idec_dec.c");
+    build.file("libwebp-1.0.0/src/dec/io_dec.c");
+    // build.file("libwebp-1.0.0/src/dec/quant_dec.c");
+    build.file("libwebp-1.0.0/src/dec/tree_dec.c");
+    build.file("libwebp-1.0.0/src/dec/vp8_dec.c");
+    build.file("libwebp-1.0.0/src/dec/vp8l_dec.c");
+    build.file("libwebp-1.0.0/src/dec/webp_dec.c");
     dir(&mut build, "src/enc");
     dir(&mut build, "src/dsp");
     build.file("libwebp-1.0.0/src/utils/bit_reader_utils.c");

@@ -1,3 +1,6 @@
+#[macro_use]
+extern crate cfg_if;
+
 #[cfg(test)]
 #[macro_use]
 extern crate approx;
@@ -12,6 +15,8 @@ macro_rules! c_assert {
     };
 }
 
+#[doc(hidden)]
+pub mod dec;
 mod decode;
 mod encode;
 pub mod sys;
