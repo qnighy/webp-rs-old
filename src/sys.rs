@@ -47,4 +47,72 @@ extern "C" {
     ) -> *mut u8;
 
     pub fn WebPGetEncoderVersion() -> c_int;
+
+    pub fn WebPEncodeRGB(
+        rgb: *const u8,
+        width: c_int,
+        height: c_int,
+        stride: c_int,
+        quality_factor: c_float,
+        output: *mut *mut u8,
+    ) -> usize;
+
+    pub fn WebPEncodeBGR(
+        bgr: *const u8,
+        width: c_int,
+        height: c_int,
+        stride: c_int,
+        quality_factor: c_float,
+        output: *mut *mut u8,
+    ) -> usize;
+
+    pub fn WebPEncodeRGBA(
+        rgba: *const u8,
+        width: c_int,
+        height: c_int,
+        stride: c_int,
+        quality_factor: c_float,
+        output: *mut *mut u8,
+    ) -> usize;
+
+    pub fn WebPEncodeBGRA(
+        bgra: *const u8,
+        width: c_int,
+        height: c_int,
+        stride: c_int,
+        quality_factor: c_float,
+        output: *mut *mut u8,
+    ) -> usize;
+
+    pub fn WebPEncodeLosslessRGB(
+        rgb: *const u8,
+        width: c_int,
+        height: c_int,
+        stride: c_int,
+        output: *mut *mut u8,
+    ) -> usize;
+
+    pub fn WebPEncodeLosslessBGR(
+        bgr: *const u8,
+        width: c_int,
+        height: c_int,
+        stride: c_int,
+        output: *mut *mut u8,
+    ) -> usize;
+
+    pub fn WebPEncodeLosslessRGBA(
+        rgba: *const u8,
+        width: c_int,
+        height: c_int,
+        stride: c_int,
+        output: *mut *mut u8,
+    ) -> usize;
+
+    pub fn WebPEncodeLosslessBGRA(
+        bgra: *const u8,
+        width: c_int,
+        height: c_int,
+        stride: c_int,
+        output: *mut *mut u8,
+    ) -> usize;
 }
