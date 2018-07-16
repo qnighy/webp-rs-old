@@ -1,0 +1,4 @@
+pub const ALPHA_HEADER_LEN: usize = 1;
+pub const ALPHA_NO_COMPRESSION: i32 = 0;
+pub const ALPHA_LOSSLESS_COMPRESSION: i32 = 1;
+pub const ALPHA_PREPROCESSED_LEVELS: i32 = 1;

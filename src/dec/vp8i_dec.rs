@@ -1,5 +1,6 @@
 use std::os::raw::*;
 
+use dec::alpha_dec::ALPHDecoder;
 use dec::common_dec::*;
 use dec::vp8_dec::VP8Io;
 use decode::VP8StatusCode;
@@ -212,9 +213,8 @@ pub struct VP8Decoder {
     pub(crate) fstrengths_: [[VP8FInfo; 2]; NUM_MB_SEGMENTS as usize], // precalculated per-segment/type
 
     // Alpha
-    // pub(crate) alph_dec_: *mut ALPHDecoder, // alpha-plane decoder object
-    pub(crate) alph_dec_: (),          // TODO replace
-    pub(crate) alpha_data_: *const u8, // compressed alpha data (if present)
+    pub(crate) alph_dec_: *mut ALPHDecoder, // alpha-plane decoder object
+    pub(crate) alpha_data_: *const u8,      // compressed alpha data (if present)
     pub(crate) alpha_data_size_: usize,
     pub(crate) is_alpha_decoded_: c_int, // true if alpha_data_ is decoded in alpha_plane_
     pub(crate) alpha_plane_mem_: *mut u8, // memory allocated for alpha_plane_

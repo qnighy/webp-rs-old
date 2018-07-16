@@ -1,11 +1,13 @@
 use std::os::raw::*;
 
+use decode::WEBP_DECODER_ABI_VERSION;
+
 pub(crate) type VP8IoPutHook = Option<extern "C" fn(*const VP8Io) -> c_int>;
 pub(crate) type VP8IoSetupHook = Option<extern "C" fn(*mut VP8Io) -> c_int>;
 pub(crate) type VP8IoTeardownHook = Option<extern "C" fn(*const VP8Io)>;
 
 #[repr(C)]
-pub(crate) struct VP8Io {
+pub struct VP8Io {
     // set by VP8GetHeaders()
     pub(crate) width: c_int,
     pub(crate) height: c_int, // picture dimensions, in pixels (invariable).
@@ -73,4 +75,13 @@ pub(crate) struct VP8Io {
     // start of the current row (That is: it is pre-offset by mb_y and takes
     // cropping into account).
     pub(crate) a: *const u8,
+}
+
+extern "C" {
+    pub(crate) fn VP8InitIoInternal(io: *mut VP8Io, version: c_int) -> c_int;
+}
+
+#[inline]
+pub(crate) unsafe fn VP8InitIo(io: *mut VP8Io) -> c_int {
+    VP8InitIoInternal(io, WEBP_DECODER_ABI_VERSION as c_int)
 }

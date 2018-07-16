@@ -18,7 +18,10 @@ macro_rules! c_assert {
 #[doc(hidden)]
 pub mod dec;
 mod decode;
+#[doc(hidden)]
+pub mod dsp;
 mod encode;
+pub mod format_constants;
 pub mod sys;
 #[doc(hidden)]
 pub mod utils;

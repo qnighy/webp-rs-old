@@ -17,7 +17,7 @@ fn dir(build: &mut cc::Build, dir: &str) {
 fn main() {
     let mut build = cc::Build::new();
     build.include("libwebp-1.0.0");
-    build.file("libwebp-1.0.0/src/dec/alpha_dec.c");
+    // build.file("libwebp-1.0.0/src/dec/alpha_dec.c");
     build.file("libwebp-1.0.0/src/dec/buffer_dec.c");
     build.file("libwebp-1.0.0/src/dec/frame_dec.c");
     build.file("libwebp-1.0.0/src/dec/idec_dec.c");

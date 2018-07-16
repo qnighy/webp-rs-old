@@ -16,6 +16,8 @@ pub enum VP8StatusCode {
     VP8_STATUS_NOT_ENOUGH_DATA,
 }
 
+pub const WEBP_DECODER_ABI_VERSION: u16 = 0x0208;
+
 pub fn decoder_version() -> i32 {
     (unsafe { sys::WebPGetDecoderVersion() }) as i32
 }
